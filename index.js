@@ -10,16 +10,21 @@ inquirer
       message: "What is your project title?",
       name: "title",
     },
+    {
+      type: "input",
+      message: "Please give a description of your project.",
+      name: "description",
+    },
   ])
   .then((responses) => {
     const pageContent = generateFile(responses);
-    fs.writeFile("README.md", pageContent, (error) =>
+    fs.writeFile("READMEoutput.md", pageContent, (error) =>
       error ? console.log(error) : console.log("Your README has been created!")
     );
   });
 
 function generateFile(responses) {
-  const readMe = `# Title
+  const readMe = `# ${responses.title}
 
   ## Description
   
@@ -45,8 +50,6 @@ function generateFile(responses) {
   For questions, comments or concerns you can reach me at or .`;
   return readMe;
 }
-
-console.log(responses);
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
