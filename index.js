@@ -1,7 +1,5 @@
 const inquirer = require("inquirer"); //object of methods
 const fs = require("fs");
-//Create an array of questions for user input
-const questions = [];
 
 inquirer
   .prompt([
@@ -88,6 +86,9 @@ function generateFile(responses) {
   For questions, comments or concerns you can reach me at [https://github.com/${responses.github}](https://github.com/${responses.github}) or [${responses.email}](mailto:${responses.email}).`;
   return readMe;
 }
+
+//Create an array of questions for user input
+// const questions = [];
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
