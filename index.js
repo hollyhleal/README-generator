@@ -24,6 +24,12 @@ inquirer
       name: "usage",
     },
     {
+      type: "list",
+      message: "What license should be tied to the project?",
+      name: "license",
+      choices: ["MIT", "Apache", "GNU"],
+    },
+    {
       type: "input",
       message: "Please list any collaborators or third-party assets used.",
       name: "credits",
@@ -55,6 +61,8 @@ inquirer
 function generateFile(responses) {
   const readMe = `# ${responses.title}
 
+  ${responses.license}
+
   ## Description
   ${responses.description}
   
@@ -75,6 +83,7 @@ function generateFile(responses) {
   ${responses.usage}
   
   ## License
+  This application is covered under ${responses.license}.
   
   ## Credits
   ${responses.credits}
