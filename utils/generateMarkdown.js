@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== "N/A") {
@@ -7,7 +7,7 @@ function renderLicenseBadge(license) {
   return ``;
 }
 
-// TODO: Create a function that returns the license link
+// Function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "N/A") {
@@ -16,24 +16,24 @@ function renderLicenseLink(license) {
   return ``;
 }
 
-// TODO: Create a function that returns the license section of README
+// Function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== "N/A") {
-    return `This application is covered under ${responses.license}.`;
+    return `This application is covered under ${data.license}.`;
   }
   return ``;
 }
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(responses) {
-  return `# ${responses.title}
+// Function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.title}
 
-  ${renderLicenseBadge(responses.license)}
-  ${renderLicenseLink(responses.license)}
+  ${renderLicenseBadge(data.license)}
+  ${renderLicenseLink(data.license)}
 
   ## Description
-  ${responses.description}
+  ${data.description}
   
   ## Table of Contents
   
@@ -46,25 +46,25 @@ function generateMarkdown(responses) {
   
   
   ## Installation
-  ${responses.installation}
+  ${data.installation}
   
   ## Usage
-  ${responses.usage}
+  ${data.usage}
   
   ## License
-  ${renderLicenseSection(responses.license)}
+  ${renderLicenseSection(data.license)}
   
   ## Credits
-  ${responses.credits}
+  ${data.credits}
   
   ## Tests
-  ${responses.tests}
+  ${data.tests}
   
   ## Questions
-  For questions, comments or concerns you can reach me at [https://github.com/${
-    responses.github
-  }](https://github.com/${responses.github}) or [${responses.email}](mailto:${
-    responses.email
+  For questions, you can reach me at [https://github.com/${
+    data.github
+  }](https://github.com/${data.github}) or by email at [${data.email}](mailto:${
+    data.email
   }).`;
 }
 
