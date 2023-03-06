@@ -1,8 +1,9 @@
 // Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+
 function renderLicenseBadge(license) {
   if (license !== "N/A") {
-    return `[License]()`;
+    return `[License](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }
   return ``;
 }
@@ -20,13 +21,14 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== "N/A") {
-    return `This application is covered under ${data.license}.`;
+    return `This application is covered under ${license}.`;
   }
   return ``;
 }
 
 // Function to generate markdown for README
 function generateMarkdown(data) {
+  console.log(data);
   return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}
