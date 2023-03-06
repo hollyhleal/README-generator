@@ -32,7 +32,7 @@ function init() {
         type: "list",
         message: "What license should be tied to the project?",
         name: "license",
-        choices: ["MIT", "Apache", "GNU", "N/A"],
+        choices: ["MIT", "Apache", "GNU", "Mozilla", "N/A"],
       },
       {
         type: "input",
