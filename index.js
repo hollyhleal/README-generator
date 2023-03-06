@@ -1,8 +1,11 @@
+//Dependencies
 const inquirer = require("inquirer"); //object of methods
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 inquirer
   .prompt([
+    //array of questions for user input
     {
       type: "input",
       message: "What is your project title?",
@@ -27,7 +30,7 @@ inquirer
       type: "list",
       message: "What license should be tied to the project?",
       name: "license",
-      choices: ["MIT", "Apache", "GNU"],
+      choices: ["MIT", "Apache", "GNU", "N/A"],
     },
     {
       type: "input",
@@ -52,52 +55,48 @@ inquirer
     },
   ])
   .then((responses) => {
-    const pageContent = generateFile(responses);
+    const pageContent = generateMarkdown(responses);
     fs.writeFile("READMEoutput.md", pageContent, (error) =>
       error ? console.log(error) : console.log("Your README has been created!")
     );
   });
 
-function generateFile(responses) {
-  const readMe = `# ${responses.title}
+// function generateFile(responses) {
+//   const readMe = `# ${responses.title}
 
-  ${responses.license}
+//   ${responses.license}
 
-  ## Description
-  ${responses.description}
-  
-  ## Table of Contents
-  
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Credits](#credits)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  
-  
-  ## Installation
-  ${responses.installation}
-  
-  ## Usage
-  ${responses.usage}
-  
-  ## License
-  This application is covered under ${responses.license}.
-  
-  ## Credits
-  ${responses.credits}
-  
-  ## Tests
-  ${responses.tests}
-  
-  ## Questions
-  For questions, comments or concerns you can reach me at [https://github.com/${responses.github}](https://github.com/${responses.github}) or [${responses.email}](mailto:${responses.email}).`;
-  return readMe;
-}
+//   ## Description
+//   ${responses.description}
 
-//Create an array of questions for user input
-// const questions = [];
+//   ## Table of Contents
+
+//   - [Installation](#installation)
+//   - [Usage](#usage)
+//   - [License](#license)
+//   - [Credits](#credits)
+//   - [Tests](#tests)
+//   - [Questions](#questions)
+
+//   ## Installation
+//   ${responses.installation}
+
+//   ## Usage
+//   ${responses.usage}
+
+//   ## License
+//   This application is covered under ${responses.license}.
+
+//   ## Credits
+//   ${responses.credits}
+
+//   ## Tests
+//   ${responses.tests}
+
+//   ## Questions
+//   For questions, comments or concerns you can reach me at [https://github.com/${responses.github}](https://github.com/${responses.github}) or [${responses.email}](mailto:${responses.email}).`;
+//   return readMe;
+// }
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
