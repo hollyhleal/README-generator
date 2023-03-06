@@ -3,7 +3,7 @@
 
 function renderLicenseBadge(license) {
   if (license !== "N/A") {
-    return `[License](https://img.shields.io/badge/license-${license}-blue.svg)`;
+    return `![License](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }
   return ``;
 }
@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "N/A") {
-    return `[License](#license)`;
+    return `[License Link](#license)`;
   }
   return ``;
 }
@@ -32,6 +32,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}
+
   ${renderLicenseLink(data.license)}
 
   ## Description
@@ -56,7 +57,7 @@ function generateMarkdown(data) {
   ## License
   ${renderLicenseSection(data.license)}
   
-  ## Credits
+  ## Contributing
   ${data.credits}
   
   ## Tests
