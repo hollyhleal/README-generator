@@ -19,6 +19,8 @@ node index.js
 
 ## Walkthrough Video:
 
+[https://drive.google.com/file/d/1doMFi_Kb8k4DhsxcgSUqWKttQTVyOG6K/view?usp=share_link](https://drive.google.com/file/d/1doMFi_Kb8k4DhsxcgSUqWKttQTVyOG6K/view?usp=share_link)
+
 ## Sample README generated in Walkthrough Video:
 
 [https://github.com/hollyhleal/README-generator/blob/main/READMEoutput.md](https://github.com/hollyhleal/README-generator/blob/main/READMEoutput.md)
